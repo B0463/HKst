@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" sizes="840z840" href="/assets/midia/img/favicon.png">
+        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+        <style>
+            h1 {
+                font-family: serif;
+                font-weight: none;
+                font-size: 3rem;
+                margin-top: 1rem;
+                display: block;
+            }
+            p {
+                font-family: serif;
+                font-weight: none;
+                font-size: 1.5rem;
+                margin: 1rem 0;
+                display: block;
+            }
+            button {
+                font-family: serif;
+                font-weight: none;
+                font-size: 1.5rem;
+                background: #7c4007;
+                border: 0;
+                border-radius: 10px;
+                padding: 1rem;
+                color: #b3b3b3;
+                margin-bottom: 1rem;
+            }
+            img {
+                display: none;
+                margin: 0 auto;
+            }
+            body {
+                text-align: center;
+            }
+        </style>
+        <title>EasterEgg - coffePot</title>
+    </head>
+    <body>
+        <h1>coffePot</h1>
+        <p>clique no botão para fazer café no bule de chá...</p>
+        <button onclick="makeCoffeInTeapot()">fazer café no bule de chá</button>
+        <img src="/assets/midia/img/bule eletronico.png">
+        <script>
+            function makeCoffeInTeapot() {
+                var ajax=new XMLHttpRequest();
+                ajax.open("POST", "/teapot/coffe", true);
+                ajax.onreadystatechange=function(){
+                    if(ajax.status == 418 && ajax.readyState == 4) {
+                        const req = ajax.responseText;
+                        document.getElementsByTagName("img")[0].style.display = "block";
+                        alert(req);
+                    }
+                };
+                ajax.send();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <link rel="icon" sizes="840z840" href="/assets/midia/img/favicon.png">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="HKst | hkimpr">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/">
+        <meta property="og:image" content="/assets/midia/img/hklogo.svg">
+        <meta property="og:description" content="validador de cpf">
+        <meta name="theme-color" content="#ff0000">
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/assets/css/utilitarios/validador_de_cpf.css">
+        <title>cpfValid | HKst</title>
+    </head>
+    <body>
+        <main>
+			<button class="main__buttons" onclick="window.history.back()">retornar</button>
+			<section class="main__util">
+				<input id="cpf" class="main__util__input" type="text" placeholder="12345678900">
+				<button onclick="cpfCalc()" class="main__util__calc-button">calcular</button>
+                <p id="result"></p>
+				<script src="/assets/js/utilitarios/validador_de_cpf.js"></script>
+			</section>
+			<section class="main__exp">
+				<h1>validação de cpf</h1>
+                <p>O CPF consistem em 11 digitos, que é 9 digitos principais e 2 validadores conhecido como numero validador.</p>
+                <p>Para verificar se um CPF é realmente verdadeiro, é preciso fazer um calco nos 9 digitos para encontrar o verificador referente.</p>
+                <p>Para validar o primeiro digito verificador encontrado em X de:</p>
+                <h2>123.456.789-X0</h2>
+                <p>É preciso fazer a multiplicação dos numeros por 10, 9, 8, 7... da seguinte forma:</p>
+                <h2>1x10=10 2x9=18 3x8=24 4x7=28 5x6=30 6x5=30 7x4=28 8x3=24 9x2=18</h2>
+                <p>Apos isso é preciso fazer a soma do resultado de todas as multiplicações:</p>
+                <h2>10+18+24+28+30+30+28+24+18=207</h2>
+                <p>Apos isso é preciso dividir o resultado no caso "207" por 11 mas pegar o resto da divizão</p>
+                <h2>207%11=9</h2>
+                <p>E por fim vamos pegar 9 e retirar de 11</p>
+                <h2>11-9=2</h2>
+                <p>Logo o primeiro digito verificador é 2.</p>
+                <p>Para pegar o segundo digito verificador é preciso multiplicar os primeiros 10 digitos do CPF por 11, 10, 9, 8...</p>
+                <h2>1x11=11 2x10=20 3x9=27 4x8=32 5x7=35 6x6=36 7x5=35 8x4=32 9x3=27 0x2=0</h2>
+                <p>Apos isso efetuar a soma de todos os resultados</p>
+                <h2>11+20+27+32+35+36+35+32+27+0=255</h2>
+                <p>Agora pegar oresto da divisão de "255" por 11</p>
+                <h2>255%11=2</h2>
+                <p>Aagora subtrair o resultado de 11</p>
+                <h2>11-2=9</h2>
+                <p>No caso o resultado é 9. caso o resultado od primeiro ou segundo digito de um valor igual ou maior que 10 ele vira 0. nesse caso o segundo digito é "9"</p>
+                <p>Sendo assim os numeros verificadores do cpf 123.456.789-00 é 29 e nesse caso como o do cpf é 00 e  o resultado é 29.o cepf é invalido.</p>
+                <p>cpf 111.111.111-11 ou 222.222.222-22 ou 333.333.333-33 eadiante são validos mas não estão registrados oficialmente.</p>
+                <h1>validando com JS</h1>
+                <h2>
+                    <bold class="code_wk">function</bold> <bold class="code_wk_d">TestaCPF</bold>(<bold class="code_wk_t">strCPF</bold>) {<br>
+                        <bold class="code_wk">let</bold> <bold class="code_wk_d">soma</bold>;<br>
+                        <bold class="code_wk">let</bold> <bold class="code_wk_d">resto</bold>;<br>
+                        <bold class="code_wk_d">soma</bold> = 0;<br>
+                        <bold class="code_wk">if</bold>(<bold class="code_wk_t">strCPF</bold> == <bold class="code_wk_q">"00000000000"</bold>}) {<br>
+                            <bold class="code_wk">return</bold> <bold class="code_wk_t">false</bold><br>
+                        };<br>
+                        <bold class="code_wk">for</bold>(<bold class="code_wk">let</bold> <bold class="code_wk_d">i</bold>=1;<bold class="code_wk_d">i</bold><=9;<bold class="code_wk_d">i</bold>++) {<br>
+                            <bold class="code_wk_d">soma</bold> = <bold class="code_wk_d">soma</bold> + <bold class="code_wk">parseInt</bold>(<bold class="code_wk_t">strCPF</bold>.<bold class="code_wk">substring</bold>(<bold class="code_wk_d">i</bold>-1, <bold class="code_wk_d">i</bold>))*(11-<bold class="code_wk_d">i</bold>);<br>
+                        }<br>
+                        <bold class="code_wk_d">resto</bold> = (<bold class="code_wk_d">soma</bold>*10)%11;<br>
+                        <bold class="code_wk">if</bold>((<bold class="code_wk_d">resto</bold> == 10)||(<bold class="code_wk_d">resto</bold> == 11)) {<br>
+                            <bold class="code_wk_d">resto</bold> = 0;<br>
+                        }<br>
+                        <bold class="code_wk">if</bold>(<bold class="code_wk_d">resto</bold> != <bold class="code_wk">parseInt</bold>(<bold class="code_wk_t">strCPF</bold>.<bold class="code_wk">substring</bold>(9, 10))) {<br>
+                            <bold class="code_wk">return</bold> <bold class="code_wk_t">false</bold>;<br>
+                        }<br>
+                        <bold class="code_wk_d">soma</bold> = 0;<br>
+                        <bold class="code_wk">for</bold>(<bold class="code_wk">let</bold> <bold class="code_wk_d">i</bold>=1;<bold class="code_wk_d">i</bold><=10;<bold class="code_wk_d">i</bold>++) {<br>
+                            <bold class="code_wk_d">soma</bold> = <bold class="code_wk_d">soma</bold> + <bold class="code_wk">parseInt</bold>(<bold class="code_wk_t">strCPF></bold>.<bold class="code_wk">substring</bold>(<bold class="code_wk_d">i</bold>-1, <bold class="code_wk_d">i</bold>))*(12-<bold class="code_wk_d">i</bold>);<br>
+                        }<br>
+                        <bold class="code_wk_d">resto</bold> = (<bold class="code_wk_d">soma</bold>*10)%11;<br>
+                        <bold class="code_wk">if</bold>((<bold class="code_wk_d">resto</bold> == 10)||(<bold class="code_wk_d">resto</bold> == 11)) {<br>
+                            <bold class="code_wk_d">resto</bold> = 0;<br>
+                        }<br>
+                        <bold class="code_wk">if</bold>(<bold class="code_wk_d">resto</bold> != <bold class="code_wk">parseInt</bold>(<bold class="code_wk_t">strCPF</bold>.<bold class="code_wk">substring</bold>(10, 11))) {<br>
+                            <bold class="code_wk">return</bold> <bold class="code_wk_t">false</bold>;<br>
+                        }<br>
+                        <bold class="code_wk">return</bold> <bold class="code_wk_t">true</bold>;<br>
+                    }
+                </h2>
+                <p>No codigo acima tem a função "TestaCPF" que tem o parametro "strCPF" que é uma string.</p>
+                <p>Caso o CPF seja valido ela devolve true, caso contrario ela devolve false.</p>
+			</section>
+			<button class="main__buttons"><a href="/utilitarios">ver outros utilitarios</a></button>
+        </main>
+        <footer>
+            <img src="/assets/midia/img/hklogo.svg">
+            <p>Copyright &copy; HKst 2022</p>
+            <div class="uni__invi-div"></div>
+        </footer>
+</html>

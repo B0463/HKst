@@ -1,0 +1,70 @@
+main {
+    padding: 10px;
+}
+.main__label {
+    margin: 10px auto;
+    max-width: 70%;
+    text-align: center;
+    background: var(--azul-medio);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.main__label h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.main__card {
+    margin: 10px auto;
+    max-width: 70%;
+    color: var(--branco04);
+    text-align: center;
+    background: var(--azul-marinho);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.main__card h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.main__card a {
+    color: var(--branco00);
+    text-decoration: none;
+}
+.main__card a:hover {
+    color: var(--branco04);
+}
+.main__card a:active {
+    color: var(--branco06)
+}
+@media screen and (min-width: 700px) {
+    .main__label {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .main__card {
+        max-width: 500px;
+        margin: 10px auto 0 auto;
+    }
+    .main__label h1 {
+        font-size: 28px;
+    }
+    .main__card h1 {
+        font-size: 28px;
+    }
+    .main__label p {
+        font-size: 22px;
+    }
+    .main__card a {
+        font-size: 22px;
+    }
+}
+@media screen and (min-width: 950px) {
+    .main__label {
+        max-width: 50%;
+    }
+    .main__card {
+        max-width: 50%;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <link rel="icon" sizes="840z840" href="/assets/midia/img/favicon.png">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="HKst | hkimpr">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/">
+        <meta property="og:image" content="/assets/midia/img/hklogo.svg">
+        <meta property="og:description" content="pagina não existente">
+        <meta name="theme-color" content="#ff0000">
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <style>
+            .title {
+                font-weight: bold;
+                font-size: 3rem;
+                color: var(--branco03);
+                text-align: center;
+                margin: 1rem;
+            }
+            .about {
+                font-size: 2rem;
+                color: var(--branco05);
+                text-align: center;
+                margin: 1rem;
+            }
+            main {
+                text-align: center;
+            }
+            .btn {
+                font-weight: bold;
+                background-color: var(--azul-marinho);
+                border: 0;
+                border-radius: 0.3rem;
+                font-size: 2rem;
+                color: var(--branco05);
+                padding: 0.6rem;
+                margin: 1rem;
+                cursor: pointer;
+            }
+            .btn:hover {
+                background-color: var(--verde-escuro);
+            }
+            .btn:active {
+                background-color: var(--preto00);
+            }
+        </style>
+        <title>404 | HKst</title>
+    </head>
+    <body>
+        <header class="header__tag">
+            <img class="header__img" src="/assets/midia/img/hklogo.svg">
+            <nav class="header__nav">
+                <ul class="header__nav--ul">
+                    <li aria-label="botão header home" class="header__nav--li"><a class="header__nav--a" href="/">home</a></li>
+                    <li aria-label="botão header contato" class="header__nav--li"><a class="header__nav--a" href="/contato/">contato</a></li>
+                    <li aria-label="botão header projetos" class="header__nav--li"><a class="header__nav--a" href="/projetos">projetos</a></li>
+                    <li aria-label="botão header curriculo" class="header__nav--li"><a class="header__nav--a" href="/utilitarios">utilitários</a></li>
+                    <li aria-label="botão header curriculo" class="header__nav--li"><a class="header__nav--a" href="/curriculo">currículo</a></li>
+                </ul>
+            </nav>
+            <div class="uni__invi-div"></div>
+        </header>
+        <main>
+            <h1 class="title">404</h1>
+            <p class="about">esta pagina não existe</p>
+            <button class="btn" onclick="window.history.go(-1)">voltar</button>
+        </main>
+        <footer>
+            <img src="/assets/midia/img/hklogo.svg">
+            <p>Copyright &copy; HKst 2022</p>
+            <div class="uni__invi-div"></div>
+        </footer>
+    </body>
+</html>

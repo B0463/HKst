@@ -1,0 +1,175 @@
+main {
+    padding: 10px;
+}
+.main__buttons {
+    color: var(--branco04);
+    background: var(--azul-marinho);
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+}
+.main__buttons:active {
+    background: var(--cinza-escuro);
+}
+.main__buttons a {
+    color: var(--branco04);
+    text-decoration: none;
+}
+.main__util {
+    margin-top: 20px;
+}
+.main__util__input {
+    color: var(--branco04);
+    background: var(--azul-marinho);
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    display: block;
+    width: 70%;
+    margin: 10px auto;
+}
+.main__util__calc-button {
+    width: 50%;
+    margin: 10px auto;
+    color: var(--branco04);
+    background: var(--azul-marinho);
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    display: block;
+}
+.main__util__calc-button:active {
+    background: var(--cinza-escuro);
+}
+#result {
+    color: var(--branco04);
+    background: var(--azul-marinho);
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    min-height: 20px;
+    padding: 10px;
+    display: block;
+    width: 70%;
+    margin: 10px auto;
+}
+.main__exp {
+    text-align: center;
+    margin: 20px 0;
+}
+.main__exp h1 {
+    color: var(--branco02);
+    font-size: 30px;
+    text-align: center;
+}
+.main__exp p {
+    color: var(--branco04);
+    margin: 3px 0;
+    font-size: 20px;
+}
+.main__exp img {
+    width: 80%;
+    margin: 18px 0;
+}
+.main__exp h2 {
+    text-align: left;
+    font-size: 20px;
+    background: var(--branco06);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    width: 80%;
+}
+.code_wk {
+    color: var(--verde);
+}
+.code_wk_d {
+    color: var(--azul-medio);
+}
+.code_wk_t {
+    color: #9e4c00;
+}
+.code_wk_q {
+    color: #aa0579;
+}
+@media screen and (min-width: 700px) {
+    .main__buttons {
+        font-size: 30px;
+        padding: 20px;
+    }
+    .main__util__input {
+        font-size: 30px;
+        padding: 20px;
+    }
+    .main__util__calc-button {
+        font-size: 30px;
+        padding: 20px;
+    }
+    #result {
+        font-size: 30px;
+        min-height: 30px;
+        padding: 20px;
+    }
+    .main__exp h1 {
+        font-size: 50px;
+    }
+    .main__exp p {
+        font-size: 30px;
+    }
+    .main__exp h2 {
+        font-size: 35px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .main__exp img {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .main__buttons {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .main__util__input {
+        font-size: 20px;
+        padding: 10px;
+        width: 50%;
+        margin: 10px 40px;
+    }
+    .main__util__calc-button {
+        font-size: 20px;
+        padding: 10px;
+        width: 30%;
+        margin: 10px 40px;
+    }
+    #result {
+        font-size: 20px;
+        min-height: 20px;
+        padding: 10px;
+        width: 50%;
+        margin: 10px 40px;
+    }
+    .main__exp {
+        text-align: left;
+    }
+    .main__exp h1 {
+        font-size: 30px;
+    }
+    .main__exp p {
+        font-size: 20px;
+    }
+    .main__exp h2 {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        width: 40%;
+        margin-left: 50px;
+    }
+    .main__exp img {
+        width: 40%;
+    }
+}

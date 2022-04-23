@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <link rel="icon" sizes="840z840" href="/assets/midia/img/favicon.png">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="HKst | hkimpr">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/">
+        <meta property="og:image" content="/assets/midia/img/hklogo.svg">
+        <meta property="og:description" content="calculadora de hipotenusa">
+        <meta name="theme-color" content="#ff0000">
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/assets/css/utilitarios/calculadora_de_hipotenusa.css">
+        <title>hipocalc | HKst</title>
+    </head>
+    <body>
+        <main>
+			<button class="main__buttons" onclick="window.history.back()">retornar</button>
+			<section class="main__util">
+				<input id="cat1" class="main__util__input" type="text" placeholder="cateto">
+				<input id="cat2" class="main__util__input" type="text" placeholder="cateto">
+				<input id="hipo" class="main__util__input" type="text" placeholder="hipotenusa">
+				<button onclick="hipocalc()" class="main__util__calc-button">calcular</button>
+				<script src="/assets/js/utilitarios/calculadora_de_hipotenusa.js"></script>
+			</section>
+			<section class="main__exp">
+				<h1>Hipotenusa</h1>
+				<p>A hipotenusa é o lado oposto ao ângulo reto de um triângulo retângulo, como mostrado na imagem abaixo: </p>
+				<img src="/assets/midia/img/hipotenusa.png">
+				<p>o lado vermelho é a hipotenusa enquanto os 2 lados laranjas são os catetos.<br>A hipotenusa é a raiz da soma dos quadrados dos catetos, ou: </p>
+				<h2>h²=co²+ca²</h2>
+				<p>No código pode se dizer: </p>
+				<h2>Math.sqrt( Math.pow( co , 2 ) + Math.pow( ca , 2 ) )</h2>
+				<p>Esse calculo pode ser muito útil para calcular o tamanho de uma escada ou o tamanho de um telhado recaido.<br>Ou apenas para passar na prova de matemática/física.</p>
+			</section>
+			<button class="main__buttons"><a href="/utilitarios">ver outros utilitarios</a></button>
+        </main>
+        <footer>
+            <img src="/assets/midia/img/hklogo.svg">
+            <p>Copyright &copy; HKst 2022</p>
+            <div class="uni__invi-div"></div>
+        </footer>
+</html>
