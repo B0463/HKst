@@ -28,30 +28,30 @@
 			</section>
 			<section class="main__exp">
 				<h1>validação de cpf</h1>
-                <p>O CPF consistem em 11 digitos, que é 9 digitos principais e 2 validadores conhecido como numero validador.</p>
-                <p>Para verificar se um CPF é realmente verdadeiro, é preciso fazer um calco nos 9 digitos para encontrar o verificador referente.</p>
+                <p>O CPF consiste em 11 dígitos, que são 9 dígitos principais e 2 validadores, são conhecidos como numeros validadores.</p>
+                <p>Para verificar se um CPF é realmente verdadeiro, é preciso fazer um cálculo nos 9 dígitos para encontrar o verificador referente.</p>
                 <p>Para validar o primeiro digito verificador encontrado em X de:</p>
                 <h2>123.456.789-X0</h2>
                 <p>É preciso fazer a multiplicação dos numeros por 10, 9, 8, 7... da seguinte forma:</p>
                 <h2>1x10=10 2x9=18 3x8=24 4x7=28 5x6=30 6x5=30 7x4=28 8x3=24 9x2=18</h2>
-                <p>Apos isso é preciso fazer a soma do resultado de todas as multiplicações:</p>
+                <p>Após isso, faça a soma dos resultados de todas as multiplicações:</p>
                 <h2>10+18+24+28+30+30+28+24+18=207</h2>
-                <p>Apos isso é preciso dividir o resultado no caso "207" por 11 mas pegar o resto da divizão</p>
+                <p>Agora, divida o resultado, no caso "207" por 11, mas pegue o resto da divisão:</p>
                 <h2>207%11=9</h2>
-                <p>E por fim vamos pegar 9 e retirar de 11</p>
+                <p>E por fim, vamos pegar 9 e retirar de 11:</p>
                 <h2>11-9=2</h2>
                 <p>Logo o primeiro digito verificador é 2.</p>
-                <p>Para pegar o segundo digito verificador é preciso multiplicar os primeiros 10 digitos do CPF por 11, 10, 9, 8...</p>
+                <p>Para pegar o segundo digito verificador é preciso multiplicar os primeiros 10 dígitos do CPF por 11, 10, 9, 8... :</p>
                 <h2>1x11=11 2x10=20 3x9=27 4x8=32 5x7=35 6x6=36 7x5=35 8x4=32 9x3=27 0x2=0</h2>
-                <p>Apos isso efetuar a soma de todos os resultados</p>
+                <p>Após isso, efetuar a soma de todos os resultados:</p>
                 <h2>11+20+27+32+35+36+35+32+27+0=255</h2>
-                <p>Agora pegar oresto da divisão de "255" por 11</p>
+                <p>Agora pegue o resto da divisão de "255" por 11:</p>
                 <h2>255%11=2</h2>
-                <p>Aagora subtrair o resultado de 11</p>
+                <p>Agora subtrair o resultado de 11:</p>
                 <h2>11-2=9</h2>
-                <p>No caso o resultado é 9. caso o resultado od primeiro ou segundo digito de um valor igual ou maior que 10 ele vira 0. nesse caso o segundo digito é "9"</p>
-                <p>Sendo assim os numeros verificadores do cpf 123.456.789-00 é 29 e nesse caso como o do cpf é 00 e  o resultado é 29.o cepf é invalido.</p>
-                <p>cpf 111.111.111-11 ou 222.222.222-22 ou 333.333.333-33 eadiante são validos mas não estão registrados oficialmente.</p>
+                <p>O resultado é 9, caso o resultado do primeiro ou segundo digito dê um valor igual ou maior que 10 vira 0. Nesse caso o segundo digito é "9"</p>
+                <p>Sendo assim, os números verificadores do cpf 123.456.789-00 é 29, como o do cpf é 00 e o resultado é 29, o cpf é inválido.</p>
+                <p>cpf 111.111.111-11 ou 222.222.222-22 ou 333.333.333-33 e adiante são válidos mas não estão registrados oficialmente.</p>
                 <h1>validando com JS</h1>
                 <h2>
                     <bold class="code_wk">function</bold> <bold class="code_wk_d">TestaCPF</bold>(<bold class="code_wk_t">strCPF</bold>) {<br>
@@ -85,7 +85,7 @@
                         <bold class="code_wk">return</bold> <bold class="code_wk_t">true</bold>;<br>
                     }
                 </h2>
-                <p>No codigo acima tem a função "TestaCPF" que tem o parametro "strCPF" que é uma string.</p>
+                <p>No código acima tem a função "TestaCPF" que tem o parametro "strCPF" que é uma string.</p>
                 <p>Caso o CPF seja valido ela devolve true, caso contrario ela devolve false.</p>
 			</section>
 			<button class="main__buttons"><a href="/utilitarios">ver outros utilitarios</a></button>
