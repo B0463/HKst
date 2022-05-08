@@ -57,8 +57,28 @@ app.get('/projetos/TickTackToe_CLI_C', function(req, res) {
 		res.send(data);
 	});
 });
+app.get('/projetos/TickTackToe_CLI_CPP', function(req, res) {
+	fs.readFile('../projetos/TickTackToe_CLI_CPP/index.html','utf8', function(err,data){
+		res.send(data);
+	});
+});
 app.get('/projetos/calc_html-css', function(req, res) {
 	fs.readFile('../projetos/calc_html-css/index.html','utf8', function(err,data){
+		res.send(data);
+	});
+});
+app.get('/projetos/IRC_server', function(req, res) {
+	fs.readFile('../projetos/IRC_server/index.html','utf8', function(err,data){
+		res.send(data);
+	});
+});
+app.get('/projetos/MondOS', function(req, res) {
+	fs.readFile('../projetos/MondOS/index.html','utf8', function(err,data){
+		res.send(data);
+	});
+});
+app.get('/projetos/telnet-chat', function(req, res) {
+	fs.readFile('../projetos/telnet-chat/index.html','utf8', function(err,data){
 		res.send(data);
 	});
 });
