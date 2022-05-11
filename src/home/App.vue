@@ -1,5 +1,7 @@
 <template>
     <header-main/>
+    <h1>What will be ahead?</h1>
+    <p>Sorry, this site is undergoing some changes. Any questions about the change contact the email "hkimpr40@gmail.com"</p>
     <footer-main/>
 </template>
 
