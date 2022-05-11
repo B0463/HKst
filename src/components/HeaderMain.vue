@@ -69,6 +69,7 @@ export default defineComponent({
 }
 @media screen and (min-width: 900px) {
     .headerLogo {
+        position: absolute;
         margin: 0;
     }
 }

@@ -1,6 +1,5 @@
 <template>
     <header-main/>
-    <div class="space"></div>
     <footer-main/>
 </template>
 
@@ -17,7 +16,4 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.space {
-    height: 20vh;
-}
 </style>
