@@ -7,7 +7,7 @@ del package-lock.json
 del package.json
 del README.md
 del tsconfig.json
-del tsconfig.nome.json
+del tsconfig.node.json
 del vite.config.ts
 cd server
 rd /s src

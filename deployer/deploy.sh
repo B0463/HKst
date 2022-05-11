@@ -7,7 +7,7 @@ rm package-lock.json
 rm package.json
 rm README.md
 rm tsconfig.json
-rm tsconfig.nome.json
+rm tsconfig.node.json
 rm vite.config.ts
 cd server
 rm -r src
