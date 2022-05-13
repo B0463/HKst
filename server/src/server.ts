@@ -29,21 +29,31 @@ app.use('/assets', express.static(rootPublicDir+'assets'));
 console_ok("assets static");
 app.use(cookieParser());
 console_ok("use cookieParser");
-app.get('/', function(req, res) {
-	fs.readFile(rootPublicDir+'index.html','utf8', function(err,data){
-		res.send(data);
-	});
-});
-console_ok("rotas");
-app.use(function(req, res, next) {
-	fs.readFile(rootPublicDir+'errors/404.html','utf8', function(err,data){
-        res.status(404).send(data);
+function getRoute(route: any): any {
+    app.get(route, function(req, res) {
+		fs.readFile(rootPublicDir+'index.html','utf8', function(err,data){
+			res.send(data);
+		});
     });
-});
-app.use(function(err: any, req: any, res: any, next: any) {
-	console.error(err.stack);
-	res.status(500).send("500 INTERNAL SERVER ERROR");
-});
+}
+function cRouter(): any {
+    getRoute("/");
+    getRoute("/contato");
+    getRoute("/projetos");
+    getRoute("/curriculo");
+    getRoute("/utilitarios");
+    app.use(function(req, res, next) {
+        fs.readFile('../errors/404.html','utf8', function(err,data){
+            res.status(404).send(data);
+        });
+    });
+    app.use(function(err: any, req: any, res: any, next: any) {
+        console.error(err.stack);
+        res.status(500).send("500 INTERNAL SERVER ERROR");
+    });
+}
+cRouter();
+console_ok("rotas");
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credenciais, app);
 httpServer.listen(80,  function () {

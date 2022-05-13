@@ -1,0 +1,33 @@
+.tiles_board {
+    border-radius: 0;
+    padding: 0;
+    text-align: center;
+}
+.tile {
+    margin: 2rem;
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 5px;
+}
+.tile_title {
+    padding: 1rem;
+}
+.tile_prev {
+    padding: 1rem;
+    border-radius: 5px;
+}
+.prev_home_as {
+    display: block;
+    text-align: left;
+}
+.prev_contato_align {
+    display: block;
+    text-align: left;
+}
+.prev_contato_ts {
+    display: inline-block;
+}
+.space {
+    width: 15rem;
+    height: 10rem;
+}

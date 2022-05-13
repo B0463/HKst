@@ -33,21 +33,31 @@ app.use('/assets', express_1.default.static(rootPublicDir + 'assets'));
 console_ok("assets static");
 app.use((0, cookie_parser_1.default)());
 console_ok("use cookieParser");
-app.get('/', function (req, res) {
-    fs_1.default.readFile(rootPublicDir + 'index.html', 'utf8', function (err, data) {
-        res.send(data);
+function getRoute(route) {
+    app.get(route, function (req, res) {
+        fs_1.default.readFile(rootPublicDir + 'index.html', 'utf8', function (err, data) {
+            res.send(data);
+        });
     });
-});
+}
+function cRouter() {
+    getRoute("/");
+    getRoute("/contato");
+    getRoute("/projetos");
+    getRoute("/curriculo");
+    getRoute("/utilitarios");
+    app.use(function (req, res, next) {
+        fs_1.default.readFile('../errors/404.html', 'utf8', function (err, data) {
+            res.status(404).send(data);
+        });
+    });
+    app.use(function (err, req, res, next) {
+        console.error(err.stack);
+        res.status(500).send("500 INTERNAL SERVER ERROR");
+    });
+}
+cRouter();
 console_ok("rotas");
-app.use(function (req, res, next) {
-    fs_1.default.readFile(rootPublicDir + 'errors/404.html', 'utf8', function (err, data) {
-        res.status(404).send(data);
-    });
-});
-app.use(function (err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send("500 INTERNAL SERVER ERROR");
-});
 const httpServer = http_1.default.createServer(app);
 const httpsServer = https_1.default.createServer(credenciais, app);
 httpServer.listen(80, function () {

@@ -37,40 +37,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.headerLogo {
-    width: 128px;
-    margin: 0 auto;
-}
-.headerTitle {
-    color: #f0f0f0;
-    text-align: center;
-}
-.header {
-    border-radius: 0;
-    margin: 0;
-}
-.headerNav {
-    padding: 0rem;
-    box-shadow: none;
-    text-align: center;
-}
-.headerNavItem {
-    margin: 0 0.4rem;
-}
-.headerNavDivItem {
-    margin: 0.4rem 0;
-    display: inline-block;
-    padding: 0.7rem;
-    border-radius: 6px;
-    font-weight: bold;
-}
-.headerNavCont {
-    display: inline-block;
-}
-@media screen and (min-width: 900px) {
-    .headerLogo {
-        position: absolute;
-        margin: 0;
-    }
-}
+@import url("../assets/css/HeaderMain.css");
 </style>

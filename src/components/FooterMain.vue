@@ -30,34 +30,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.footerLogo {
-    width: 128px;
-    margin: 0 auto;
-}
-.footer {
-    border-radius: 0;
-    margin: 0;
-    padding-bottom: 2rem;
-}
-.footerTitle {
-    color: #f0f0f0;
-    text-align: center;
-}
-.footerContent {
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-}
-p {
-    text-align: center;
-    margin-top: 2rem;
-}
-@media screen and (min-width: 900px) {
-    .footerLogo {
-        margin: 0;
-    }
-    .footerContent {
-        padding: 0 3rem;
-    }
-}
+@import url("../assets/css/FooterMain.css");
 </style>
