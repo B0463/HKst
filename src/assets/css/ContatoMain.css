@@ -1,4 +1,32 @@
-.space {
-    width: 15rem;
-    height: 10rem;
+.boxes {
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+.contCard {
+    margin: 1rem;
+}
+.backRed {
+    background-color: #ff0000;
+}
+.backDis {
+    background-color: #5865f2;
+}
+.backInsta {
+    background-color: #9e226b;
+}
+.backTok {
+    background-color: #13aeab;
+}
+.backAlura {
+    background-color: #0e004d;
+}
+.backCDH {
+    background-color: #234a86;
+}
+.backGitHub {
+    background-color: #1d2125;
+}
+.textTok {
+    color :#ffffff;
 }
