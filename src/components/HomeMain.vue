@@ -37,13 +37,13 @@
                                         <p class="prev_contato_ts has-text-warning">TikTok:</p> <a href="https://www.tiktok.com/@b.0463" target="_blank" class="prev_contato_ts has-text-success">@b.0463</a>
                                     </div>
                                     <div class="prev_contato_align">
-                                        <p class="prev_contato_ts has-text-warning">Instagram:</p> <a class="prev_contato_ts has-text-success">@b.0463</a>
+                                        <p class="prev_contato_ts has-text-warning">Instagram:</p> <a href="https://www.instagram.com/b.0463/" target="_blank" class="prev_contato_ts has-text-success">@b.0463</a>
                                     </div>
                                     <div class="prev_contato_align">
-                                        <p class="prev_contato_ts has-text-warning">Twitter:</p> <a class="prev_contato_ts has-text-success">@b_0463</a>
+                                        <p class="prev_contato_ts has-text-warning">Twitter:</p> <a href="https://twitter.com/b_0463" target="_blank" class="prev_contato_ts has-text-success">@b_0463</a>
                                     </div>
                                     <div class="prev_contato_align">
-                                        <p class="prev_contato_ts has-text-warning">Discord:</p> <a class="prev_contato_ts has-text-success">Ceira Server</a>
+                                        <p class="prev_contato_ts has-text-warning">Discord:</p> <a href="https://discord.gg/2d77HA5NjM" target="_blank" class="prev_contato_ts has-text-success">Ceira Server</a>
                                     </div>
                                 </div>
                             </div>
