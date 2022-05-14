@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="box tiles_board has-background-grey-lighter">
+        <div class="box tiles_board">
             <a href="/">
                 <div class="tile has-background-grey-light">
                     <div class="tile-cont">
