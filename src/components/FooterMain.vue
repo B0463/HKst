@@ -2,9 +2,9 @@
     <footer class="box has-background-black-ter footer">
         <div>
             <figure class="image footerLogoFig">
-                <img class="footerLogo" src="../assets/logo.png">
+                <img class="footerLogo" src="../assets/protyz_logo.svg">
             </figure>
-            <h1 class="title footerTitle">HKst</h1>
+            <h1 class="title footerTitle">PTZst</h1>
         </div>
         <div class="footerContent has-background-black-ter box">
             <nav>

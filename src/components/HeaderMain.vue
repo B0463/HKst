@@ -2,9 +2,9 @@
     <header class="box has-background-black-ter header">
         <div>
             <figure class="image headerLogoFig">
-                <img class="headerLogo" src="../assets/logo.png">
+                <img class="headerLogo" src="../assets/protyz_logo.svg">
             </figure>
-            <h1 class="title headerTitle">HKst</h1>
+            <h1 class="title headerTitle">PTZst</h1>
         </div>
         <nav class="headerNav box has-background-black-ter">
             <div class="headerNavCont">
