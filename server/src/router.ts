@@ -1,14 +1,20 @@
 const routes = require("../routes.json");
-function getRoute(route: any, app: any, fs: any, rootPublicDir: any): any {
+import api from "./api/api";
+import fs from "fs";
+function getRoute(route: any, app: any, rootPublicDir: any): any {
     app.get(route, function(req, res) {
 		fs.readFile(rootPublicDir+'index.html','utf8', function(err,data){
 			res.send(data);
 		});
     });
 }
-function cRouter(app: any, fs: any, rpd: any): any {
+function cRouterAPI(app: any): any {
+    api.createAPI(app);
+}
+function cRouter(app: any, rpd: any): any {
+    cRouterAPI(app);
     for(let i=0;i<routes.length;i++) {
-        getRoute(routes[i], app, fs, rpd);
+        getRoute(routes[i], app, rpd);
     }
     app.use(function(req, res, next) {
         fs.readFile('../errors/404.html','utf8', function(err,data){

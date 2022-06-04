@@ -1,19 +1,28 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cRouter = void 0;
 const routes = require("../routes.json");
-function getRoute(route, app, fs, rootPublicDir) {
+const api_1 = __importDefault(require("./api/api"));
+const fs_1 = __importDefault(require("fs"));
+function getRoute(route, app, rootPublicDir) {
     app.get(route, function (req, res) {
-        fs.readFile(rootPublicDir + 'index.html', 'utf8', function (err, data) {
+        fs_1.default.readFile(rootPublicDir + 'index.html', 'utf8', function (err, data) {
             res.send(data);
         });
     });
 }
-function cRouter(app, fs, rpd) {
+function cRouterAPI(app) {
+    api_1.default.createAPI(app);
+}
+function cRouter(app, rpd) {
+    cRouterAPI(app);
     for (let i = 0; i < routes.length; i++) {
-        getRoute(routes[i], app, fs, rpd);
+        getRoute(routes[i], app, rpd);
     }
     app.use(function (req, res, next) {
-        fs.readFile('../errors/404.html', 'utf8', function (err, data) {
+        fs_1.default.readFile('../errors/404.html', 'utf8', function (err, data) {
             res.status(404).send(data);
         });
     });

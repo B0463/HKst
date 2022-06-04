@@ -35,7 +35,7 @@ app.use('/assets', express_1.default.static(rootPublicDir + 'assets'));
 console_ok("assets static");
 app.use((0, cookie_parser_1.default)());
 console_ok("use cookieParser");
-(0, router_1.cRouter)(app, fs_1.default, rootPublicDir);
+(0, router_1.cRouter)(app, rootPublicDir);
 console_ok("router");
 const httpServer = http_1.default.createServer(app);
 const httpsServer = https_1.default.createServer(credenciais, app);
