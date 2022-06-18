@@ -1,0 +1,22 @@
+{
+    "ssl": {
+        "crt": {
+            "file": "../ssl/ssl.crt",
+            "encode": "utf-8"
+        },
+        "key": {
+            "file": "../ssl/ssl.key",
+            "encode": "utf-8"
+        }
+    },
+    "router": {
+        "rootDir": "../../dist/",
+        "routes": [
+            "/",
+            "/contato",
+            "/projetos",
+            "/curriculo",
+            "/utilitarios"
+        ]
+    }
+}

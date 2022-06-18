@@ -1,49 +1,46 @@
+import concol from "./concol";
+concol.console_ok("log format");
 import express from 'express';
-console.log("[OK] express");
+concol.console_ok("express");
 import cookieParser from 'cookie-parser';
-console.log("[OK] cookie-parser");
+concol.console_ok("cookie-parser");
 import fs from "fs";
-console.log("[OK] fs");
+concol.console_ok("fs");
 import http from "http";
-console.log("[OK] http");
+concol.console_ok("http");
 import https from "https";
-console.log("[OK] https");
+concol.console_ok("https");
 import { cRouter } from './router';
-console.log("[OK] router");
-function console_ok(msg: string) {
-	console.log("\033[1;32m[OK] \033[0m"+msg);
-}
-function console_error(msg: string) {
-	console.log("\033[1;31m[error] \033[0m"+msg);
-}
-console_ok("log format");
-const sslCrt = fs.readFileSync('../ssl/ssl.crt', 'utf8');
-console_ok("sslCrt");
-const sslKey  = fs.readFileSync('../ssl/ssl.key', 'utf8');
-console_ok("sslKey");
+concol.console_ok("router");
+const configFile = require("../server_config.json");
+concol.console_ok("config file");
+const sslCrt = fs.readFileSync(configFile.ssl.crt.file, configFile.ssl.crt.encode);
+concol.console_ok("sslCrt");
+const sslKey  = fs.readFileSync(configFile.ssl.key.file, configFile.ssl.key.encode);
+concol.console_ok("sslKey");
 const app = express();
-console_ok("app");
+concol.console_ok("app");
 const credenciais = {key: sslKey, cert: sslCrt};
-console_ok("credenciais");
-const rootPublicDir = "../../dist/";
-console_ok("rootPublicDir");
+concol.console_ok("credenciais");
+const rootPublicDir = configFile.router.rootDir;
+concol.console_ok("rootPublicDir");
 app.use('/assets', express.static(rootPublicDir+'assets'));
-console_ok("assets static");
+concol.console_ok("assets static");
 app.use(cookieParser());
-console_ok("use cookieParser");
+concol.console_ok("use cookieParser");
 cRouter(app, rootPublicDir);
-console_ok("router");
+concol.console_ok("router");
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credenciais, app);
 httpServer.listen(80,  function () {
-	console_ok('express rodando na porta 80 (HTTP)');
+	concol.console_ok('express rodando na porta 80 (HTTP)');
 });
 httpsServer.listen(443, function () {
-	console_ok('express rodando na porta 443 (HTTPS)');
+	concol.console_ok('express rodando na porta 443 (HTTPS)');
 });
 httpServer.on("error", (e) => {
-	console_error("ocorreu um erro na porta 80 (HTTP):\n"+e);
+	concol.console_error("ocorreu um erro na porta 80 (HTTP):\n"+e);
 });
 httpsServer.on("error", (e) => {
-	console_error("ocorreu um erro na porta 443 (HTTPS)):\n"+e);
+	concol.console_error("ocorreu um erro na porta 443 (HTTPS)):\n"+e);
 });

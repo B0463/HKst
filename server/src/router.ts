@@ -1,4 +1,4 @@
-const routes = require("../routes.json");
+const routes = require("../server_config.json").router.routes;
 import api from "./api/api";
 import fs from "fs";
 function getRoute(route: any, app: any, rootPublicDir: any): any {
@@ -17,9 +17,9 @@ function cRouter(app: any, rpd: any): any {
         getRoute(routes[i], app, rpd);
     }
     app.use(function(req, res, next) {
-        fs.readFile('../errors/404.html','utf8', function(err,data){
-            res.status(404).send(data);
-        });
+        fs.readFile(rpd+'index.html','utf8', function(err,data){
+			res.send(data);
+		});
     });
     app.use(function(err: any, req: any, res: any, next: any) {
         console.error(err.stack);

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cRouter = void 0;
-const routes = require("../routes.json");
+const routes = require("../server_config.json").router.routes;
 const api_1 = __importDefault(require("./api/api"));
 const fs_1 = __importDefault(require("fs"));
 function getRoute(route, app, rootPublicDir) {
@@ -22,8 +22,8 @@ function cRouter(app, rpd) {
         getRoute(routes[i], app, rpd);
     }
     app.use(function (req, res, next) {
-        fs_1.default.readFile('../errors/404.html', 'utf8', function (err, data) {
-            res.status(404).send(data);
+        fs_1.default.readFile(rpd + 'index.html', 'utf8', function (err, data) {
+            res.send(data);
         });
     });
     app.use(function (err, req, res, next) {
