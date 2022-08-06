@@ -9,4 +9,5 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+@import url("./assets/css/App.css");
 </style>
